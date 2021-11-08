@@ -20429,7 +20429,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     context.beginPath();
     context.moveTo(width / 2, 0);
     let y = 0;
-    const limit = 10;
+    const limit = 6;
     for (let i = 0; i < limit; i++) {
       let angle = Math.atan(slope);
       const cx1 = width / 2 + Math.sin(angle) * magnitude;
@@ -20445,12 +20445,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
     context.stroke();
   }
-  var ContentFrame = (props) => {
-    const [initialSlope, setInitialSlope] = React.useState(18);
-    const [slopeGrowth, setSlopeGrowh] = React.useState(0.6);
-    const [initialMagnitude, setInitialMagnitude] = React.useState(72);
-    const [magnitudeGrowth, setMagnitudeGrowth] = React.useState(0.8);
-    const [initialLength, setInitialLength] = React.useState(5);
+  function Index({}) {
+    const [initialSlope, setInitialSlope] = React.useState(19);
+    const [slopeGrowth, setSlopeGrowh] = React.useState(0.41);
+    const [initialMagnitude, setInitialMagnitude] = React.useState(35);
+    const [magnitudeGrowth, setMagnitudeGrowth] = React.useState(0.75);
+    const [initialLength, setInitialLength] = React.useState(6);
     const [lengthGrowth, setLengthGrowth] = React.useState(1.5);
     const [context, setContext] = React.useState(null);
     const ref = React.useCallback((element) => {
@@ -20517,8 +20517,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       min: "1",
       max: "1000"
     }), /* @__PURE__ */ React.createElement("br", null)));
-  };
-  ReactDOM.render(/* @__PURE__ */ React.createElement(ContentFrame, null), document.querySelector("main"));
+  }
+  ReactDOM.render(/* @__PURE__ */ React.createElement(Index, null), document.querySelector("main"));
 })();
 /*
 object-assign

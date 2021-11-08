@@ -1,8 +1,6 @@
 import * as ReactDOM from "react-dom"
 import * as React from "react"
 
-export interface ContentFrameProps {}
-
 const width = 100
 const height = 640
 
@@ -20,7 +18,7 @@ function paint(
 	context.moveTo(width / 2, 0)
 
 	let y = 0
-	const limit = 10
+	const limit = 6
 	for (let i = 0; i < limit; i++) {
 		let angle = Math.atan(slope)
 		const cx1 = width / 2 + Math.sin(angle) * magnitude
@@ -41,18 +39,18 @@ function paint(
 	context.stroke()
 }
 
-// const delta = 1
-const ContentFrame: React.FC<ContentFrameProps> = (props) => {
-	const [initialSlope, setInitialSlope] = React.useState(18)
-	const [slopeGrowth, setSlopeGrowh] = React.useState(0.6)
-	const [initialMagnitude, setInitialMagnitude] = React.useState(72)
-	const [magnitudeGrowth, setMagnitudeGrowth] = React.useState(0.8)
-	const [initialLength, setInitialLength] = React.useState(5)
+function Index({}: {}) {
+	const [initialSlope, setInitialSlope] = React.useState(19)
+	const [slopeGrowth, setSlopeGrowh] = React.useState(0.41)
+	const [initialMagnitude, setInitialMagnitude] = React.useState(35)
+	const [magnitudeGrowth, setMagnitudeGrowth] = React.useState(0.75)
+	const [initialLength, setInitialLength] = React.useState(6)
 	const [lengthGrowth, setLengthGrowth] = React.useState(1.5)
 
 	const [context, setContext] = React.useState<CanvasRenderingContext2D | null>(
 		null
 	)
+
 	const ref = React.useCallback((element: HTMLCanvasElement | null) => {
 		if (element === null) {
 			return
@@ -165,4 +163,4 @@ const ContentFrame: React.FC<ContentFrameProps> = (props) => {
 	)
 }
 
-ReactDOM.render(<ContentFrame />, document.querySelector("main"))
+ReactDOM.render(<Index />, document.querySelector("main"))
